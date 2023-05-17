@@ -1,4 +1,4 @@
-{% set version = "1.6-0" %}
+{% set version = "1.6-2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/WeightedCluster_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/WeightedCluster/WeightedCluster_{{ version }}.tar.gz
-  sha256: 3241d43d4311caa9e78dc053bf544e9bbffa35dc58381d8941ae33eca3db3cc3
+  sha256: e1e1fd01f15f76e60eec98772725997d52354035c3a4bd1ad95da52a7df2f21d
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
