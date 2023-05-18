@@ -21,10 +21,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -33,15 +33,23 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-cluster
+    - r-dofuture
+    - r-foreach
+    - r-future
+    - r-progressr
     - r-rcolorbrewer
     - r-traminer >=2.0_6
-    - r-cluster
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
+    - r-cluster
+    - r-dofuture
+    - r-foreach
+    - r-future
+    - r-progressr
     - r-rcolorbrewer
     - r-traminer >=2.0_6
-    - r-cluster
 
 test:
   commands:
@@ -55,28 +63,9 @@ about:
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
     - conda-forge/r
     - tobiasraabe
-
-# Package: WeightedCluster
-# Version: 1.4-1
-# Date: 2020-07-05
-# Title: Clustering of Weighted Data
-# Authors@R: person("Matthias", "Studer", email = "matthias.studer@unige.ch", role = c("aut", "cre"))
-# Author: Matthias Studer [aut, cre]
-# Maintainer: Matthias Studer <matthias.studer@unige.ch>
-# Depends: R (>= 3.0.0), TraMineR (>= 2.0-6), cluster
-# Imports: utils, RColorBrewer
-# Suggests: RUnit, knitr, isotone, vegan, lattice
-# SystemRequirements: C++11
-# VignetteBuilder: knitr
-# Description: Clusters state sequences and weighted data. It provides an optimized weighted PAM algorithm as well as functions for aggregating replicated cases, computing cluster quality measures for a range of clustering solutions and plotting clusters of state sequences.
-# License: GPL (>= 2)
-# URL: http://mephisto.unige.ch/weightedcluster
-# NeedsCompilation: yes
-# Packaged: 2020-07-05 07:14:48 UTC; studerm
-# Repository: CRAN
-# Date/Publication: 2020-07-06 13:10:02 UTC
