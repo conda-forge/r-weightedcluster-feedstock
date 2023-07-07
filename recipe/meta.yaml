@@ -21,10 +21,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}          # [not win]
-    - {{ compiler('m2w64_c') }}    # [win]
-    - {{ compiler('cxx') }}        # [not win]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -33,23 +33,25 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-rcolorbrewer
+    - r-traminer >=2.0_6
     - r-cluster
     - r-dofuture
     - r-foreach
     - r-future
+    - r-nnet
     - r-progressr
-    - r-rcolorbrewer
-    - r-traminer >=2.0_6
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
+    - r-rcolorbrewer
+    - r-traminer >=2.0_6
     - r-cluster
     - r-dofuture
     - r-foreach
     - r-future
+    - r-nnet
     - r-progressr
-    - r-rcolorbrewer
-    - r-traminer >=2.0_6
 
 test:
   commands:
