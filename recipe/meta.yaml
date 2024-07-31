@@ -1,6 +1,5 @@
 {% set version = "1.6-4" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-weightedcluster
@@ -13,8 +12,7 @@ source:
   sha256: 8401e1f2d956111da029b0dbd01a74559d9f4d5c757bebaefaf91d2f3928d1ab
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -43,7 +43,6 @@ requirements:
     - r-progressr
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-rcolorbrewer
     - r-traminer >=2.0_6
     - r-cluster
