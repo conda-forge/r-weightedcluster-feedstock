@@ -37,20 +37,24 @@ requirements:
     - r-traminer >=2.0_6
     - r-cluster
     - r-dofuture
+    - r-fastcluster
     - r-foreach
     - r-future
     - r-nnet
     - r-progressr
+    - r-vegclust
   run:
     - r-base
     - r-rcolorbrewer
     - r-traminer >=2.0_6
     - r-cluster
     - r-dofuture
+    - r-fastcluster
     - r-foreach
     - r-future
     - r-nnet
     - r-progressr
+    - r-vegclust
 
 test:
   commands:
