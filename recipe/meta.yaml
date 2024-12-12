@@ -1,4 +1,4 @@
-{% set version = "1.8-0" %}
+{% set version = "1.8-1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/WeightedCluster_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/WeightedCluster/WeightedCluster_{{ version }}.tar.gz
-  sha256: a046c857f8bc5d8bf25d83feb18004f23b34121080692e328354779172f9eae9
+  sha256: daf9987cee5ac9e706a39e72f54a64e49e9fe91b0bc3cfb5e5a94d5076b2df5b
 
 build:
   number: 0
