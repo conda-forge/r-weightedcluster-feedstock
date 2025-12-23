@@ -1,4 +1,4 @@
-{% set version = "1.8-1" %}
+{% set version = "2.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/WeightedCluster_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/WeightedCluster/WeightedCluster_{{ version }}.tar.gz
-  sha256: daf9987cee5ac9e706a39e72f54a64e49e9fe91b0bc3cfb5e5a94d5076b2df5b
+  sha256: 6a03fbbc090ac92498a410faab1aeb88d686ff7a81dcfdcb97edacda44f393cc
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -40,6 +40,8 @@ requirements:
     - r-fastcluster
     - r-foreach
     - r-future
+    - r-lme4
+    - r-margins
     - r-nnet
     - r-progressr
     - r-vegclust
@@ -52,6 +54,8 @@ requirements:
     - r-fastcluster
     - r-foreach
     - r-future
+    - r-lme4
+    - r-margins
     - r-nnet
     - r-progressr
     - r-vegclust
