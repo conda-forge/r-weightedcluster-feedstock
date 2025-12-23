@@ -40,6 +40,8 @@ requirements:
     - r-fastcluster
     - r-foreach
     - r-future
+    - r-lme4
+    - r-margins
     - r-nnet
     - r-progressr
     - r-vegclust
@@ -52,6 +54,8 @@ requirements:
     - r-fastcluster
     - r-foreach
     - r-future
+    - r-lme4
+    - r-margins
     - r-nnet
     - r-progressr
     - r-vegclust
